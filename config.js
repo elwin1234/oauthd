@@ -1,7 +1,8 @@
 module.exports = {
 	host_url: "http://localhost:6284",		// mounted on this url
 	base: "/",								// add a base url path. e.g: "/auth"
-	port: 6284,
+	port: 443,
+	http_port: 80,
 
 	debug: false,							// add stack trace & infos in errors
 
