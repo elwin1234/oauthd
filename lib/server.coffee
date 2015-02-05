@@ -50,7 +50,6 @@ http_server = restify.createServer server_options
 if config.ssl
 	server_options.key = fs.readFileSync Path.resolve(config.rootdir, config.ssl.key)
 	server_options.certificate = fs.readFileSync Path.resolve(config.rootdir, config.ssl.certificate)
-	console.log 'SSL is enabled !'
 
 # create (ssl) server
 server = restify.createServer server_options
@@ -76,7 +75,6 @@ setup_server = (server) ->
 	# generated js sdk
 	server.get config.base + '/download/latest/oauth.js', (req, res, next) ->
 		sdk_js.get (e, r) ->
-			console.log 'config base = %s', config.base
 			return next e if e
 			res.setHeader 'Content-Type', 'application/javascript'
 			res.send r
